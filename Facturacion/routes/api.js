@@ -10,7 +10,8 @@ client.connect();
 
 router.get('/empresa/:id', function(req, res, next) {
 	var results = {};
-	var query = client.query('SELECT * FROM public.empresa WHERE id = ' + req.params.id, 
+	//var query = client.query('SELECT * FROM public.empresa WHERE id = ' + req.params.id, 
+	var query = client.query('SELECT * FROM public.empresa', 
 			function(err, result) {
         if(err) {return console.error(err);}
          results.empresa = result.rows;
